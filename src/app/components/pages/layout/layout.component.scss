@@ -1,0 +1,16 @@
+@use '../../../styles/_mixins.scss' as *;
+
+:host {
+  @include flex($direction: column, $justify: flex-start);
+  min-height: 100vh;
+}
+.btn {
+  @include btn();
+}
+.container {
+  min-width: 100px;
+}
+.nav {
+  @include flex();
+  padding: 20px;
+}

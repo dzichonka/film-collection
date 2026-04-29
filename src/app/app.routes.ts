@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { LayoutComponent } from './pages/layout/layout.component';
+import { LayoutComponent } from './components/pages/layout/layout.component';
 
 export const routes: Routes = [
   {
@@ -9,7 +9,9 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () =>
-          import('./pages/home-page/home-page.component').then((m) => m.HomePageComponent),
+          import('./components/pages/home-page/home-page.component').then(
+            (m) => m.HomePageComponent,
+          ),
       },
       {
         path: '',
@@ -20,12 +22,14 @@ export const routes: Routes = [
         //   path: ':movieId',
         path: 'details',
         loadComponent: () =>
-          import('./pages/details-page/details-page.component').then((m) => m.DetailsPageComponent),
+          import('./components/pages/details-page/details-page.component').then(
+            (m) => m.DetailsPageComponent,
+          ),
       },
       {
         path: '**',
         loadComponent: () =>
-          import('./pages/not-found-page/not-found-page.component').then(
+          import('./components/pages/not-found-page/not-found-page.component').then(
             (m) => m.NotFoundPageComponent,
           ),
       },
