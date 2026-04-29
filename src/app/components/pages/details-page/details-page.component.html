@@ -1,1 +1,13 @@
-<p>details-page works!</p>
+@if (movie.isLoading()) {
+  <p>Loading...</p>
+}
+
+@if (movie.hasValue()) {
+  <div class="movie">
+    <h3>{{ movie.value().title }}</h3>
+    <p>{{ movie.value().description }}</p>
+    <p>Year: {{ movie.value().year }}</p>
+    <p>Genre: {{ movie.value().genre }}</p>
+    <img class="img" src="{{ movie.value().posterUrl }}" alt="{{ movie.value().title }} poster" />
+  </div>
+}

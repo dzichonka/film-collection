@@ -19,8 +19,8 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        //   path: ':movieId',
-        path: 'details',
+        path: ':movieId',
+        // path: 'details',
         loadComponent: () =>
           import('./components/pages/details-page/details-page.component').then(
             (m) => m.DetailsPageComponent,

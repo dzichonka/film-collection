@@ -1,11 +1,11 @@
 <ul class="movie-list">
-  @if (movieService.movies.isLoading()) {
+  @if (movies.isLoading()) {
     <p>Loading...</p>
   }
 
-  @if (movieService.movies.hasValue()) {
-    @for (movie of movieService.movies.value(); track movie.id) {
-      <li class="movie-item">
+  @if (movies.hasValue()) {
+    @for (movie of movies.value(); track movie.id) {
+      <li class="movie-item" (click)="onMovieSelected(movie.id)">
         <h3>{{ movie.title }}</h3>
         <img class="img" src="{{ movie.posterUrl }}" alt="{{ movie.title }} poster" />
       </li>

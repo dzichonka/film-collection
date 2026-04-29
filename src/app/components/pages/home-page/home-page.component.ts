@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MovieService } from '../../../services/movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,4 +10,11 @@ import { MovieService } from '../../../services/movie.service';
 })
 export class HomePageComponent {
   movieService = inject(MovieService);
+  router = inject(Router);
+
+  movies = this.movieService.getAllMovies();
+
+  onMovieSelected(movieId: number): void {
+    this.router.navigate([movieId]);
+  }
 }

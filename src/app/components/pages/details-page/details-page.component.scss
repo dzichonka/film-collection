@@ -1,0 +1,6 @@
+@use '../../../styles/mixins' as mixins;
+
+.movie {
+  width: 600px;
+  @include mixins.flex($direction: column);
+}

@@ -13,20 +13,25 @@ export class MovieService {
 
   private readonly reloadVersion = signal(0);
 
-  readonly movies = resource({
-    params: () => ({
-      version: this.reloadVersion(),
-    }),
-    loader: () => firstValueFrom(this.http.get<Movie[]>(this.baseUrl)),
-  });
+  getAllMovies() {
+    return resource({
+      params: () => ({
+        version: this.reloadVersion(),
+      }),
+      loader: () => firstValueFrom(this.http.get<Movie[]>(this.baseUrl)),
+    });
+  }
+
   getMovie(id: number) {
     return resource({
-      loader: () =>
-        firstValueFrom(
-          this.http
-            .get<Movie[]>(this.baseUrl)
-            .pipe(map((movies) => movies.find((movie) => movie.id === id))),
-        ),
+      loader: async () => {
+        const movies = await firstValueFrom(this.http.get<Movie[]>(this.baseUrl));
+        const movie = movies.find((movie) => movie.id === id);
+        if (!movie) {
+          throw new Error(`Movie with id ${id} not found`);
+        }
+        return movie;
+      },
     });
   }
   refreshMovies(): void {
