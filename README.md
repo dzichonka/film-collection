@@ -1,59 +1,48 @@
-# FilmCollection
+# 🎬 Film Collection
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+A modern movie catalog application built with Angular 21 using standalone components, Signals, and the latest Angular features.
 
-## Development server
+This project was created as part of my Angular learning journey and focuses on clean architecture, modern patterns, and a fully reactive approach without RxJS.
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
-```
+- Angular 21
+- Standalone Components
+- Angular Signals
+- New Control Flow (`@if`, `@for`, `@switch`)
+- Lazy Loading
+- Strict TypeScript
+- Responsive Design
+- No RxJS — Signals only
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Live Demo
 
-## Code scaffolding
+[Vercel Deployment](https://angular-film-collection.vercel.app/home)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📚 Assignment
 
-```bash
-ng generate component component-name
-```
+[Project Requirements](https://github.com/rolling-scopes-school/tasks/blob/master/angular/tasks/angular-intro-task/README.md)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 👩‍💻 About Me
 
-```bash
-ng generate --help
-```
+Hi, I'm Anna Vasilevich, a Frontend Developer passionate about building modern web applications.
 
-## Building
+My native language is Russian, and I communicate confidently in English in both professional and everyday environments. I continuously improve my language skills while working in international teams and studying technical materials.
 
-To build the project run:
+I have successfully completed professional frontend development courses and am constantly expanding my expertise in Angular, TypeScript, and modern web technologies.
 
-```bash
-ng build
-```
+I enjoy writing clean, maintainable code, solving challenging problems, and learning new technologies. Angular has become one of my favorite frameworks thanks to its powerful architecture and excellent developer experience.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🔗 Connect With Me
 
-## Running unit tests
+- [LinkedIn](https://linkedin.com/in/anna-vasilevich-frontend)
+- [GitHub](https://github.com/dzichonka)
+- [Resume](https://drive.google.com/file/d/16u5W3NP_8uJ_7QDO5OV2aQt557zoR4Y2/view?usp=sharing)
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🛠️ Tech Stack
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 21
+- TypeScript
+- SCSS
+- Angular Signals
+- Angular Router
