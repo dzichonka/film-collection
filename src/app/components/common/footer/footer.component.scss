@@ -1,0 +1,9 @@
+@use '../../../styles/mixins' as mixins;
+.footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  @include mixins.flex();
+}
+.material-icons {
+  color: var(--primary);
+}

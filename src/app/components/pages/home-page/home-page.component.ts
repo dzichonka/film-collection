@@ -16,6 +16,6 @@ export class HomePageComponent {
   movies = this.movieService.getAllMovies();
 
   onMovieSelected(movieId: number): void {
-    this.router.navigate([movieId]);
+    this.router.navigate(['/details', movieId]);
   }
 }

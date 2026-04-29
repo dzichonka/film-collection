@@ -3,14 +3,10 @@
 :host {
   @include flex($direction: column, $justify: flex-start);
   min-height: 100vh;
+  margin: 0;
 }
-.btn {
-  @include btn();
-}
-.container {
-  min-width: 100px;
-}
-.nav {
-  @include flex();
-  padding: 20px;
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
 }

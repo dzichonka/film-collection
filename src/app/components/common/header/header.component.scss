@@ -1,0 +1,12 @@
+@use '../../../styles/mixins' as mixins;
+:host {
+  width: 100%;
+}
+.header {
+  max-width: 1000px;
+  margin: 0 auto;
+  @include mixins.flex($justify: space-between);
+}
+.nav {
+  @include mixins.flex($justify: flex-end);
+}
