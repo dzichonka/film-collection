@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, resource, signal } from '@angular/core';
 import { Movie } from '../types/movie.type';
 import { firstValueFrom } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',

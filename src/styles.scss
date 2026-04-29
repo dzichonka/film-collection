@@ -1,3 +1,4 @@
+@use './app/styles/mixins' as mixins;
 /* Light Theme */
 :root {
   --primary: #6b8e23;
@@ -30,4 +31,10 @@ body {
   font-style: normal;
   background-color: var(--background);
   color: var(--text-primary);
+}
+.link {
+  @include mixins.link();
+}
+.btn {
+  @include mixins.btn();
 }

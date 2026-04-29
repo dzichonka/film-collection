@@ -31,3 +31,18 @@
     }
   }
 }
+@mixin link {
+  color: var(--primary);
+  padding: 5px 10px;
+  &:visited {
+    color: var(--secondary);
+  }
+  @media (hover: hover) {
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover:not(:disabled) {
+      color: var(--primary-hover);
+    }
+  }
+}

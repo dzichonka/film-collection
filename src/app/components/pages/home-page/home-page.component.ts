@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MovieService } from '../../../services/movie.service';
 import { Router } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   imports: [],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
   movieService = inject(MovieService);

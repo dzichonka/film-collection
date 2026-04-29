@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MovieService } from '../../../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -8,6 +8,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
   imports: [],
   templateUrl: './details-page.component.html',
   styleUrl: './details-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DetailsPageComponent {
   movieService = inject(MovieService);

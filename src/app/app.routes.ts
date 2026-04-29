@@ -19,8 +19,14 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: ':movieId',
-        // path: 'details',
+        path: 'about',
+        loadComponent: () =>
+          import('./components/pages/about-page/about-page.component').then(
+            (m) => m.AboutPageComponent,
+          ),
+      },
+      {
+        path: 'details/:movieId',
         loadComponent: () =>
           import('./components/pages/details-page/details-page.component').then(
             (m) => m.DetailsPageComponent,
