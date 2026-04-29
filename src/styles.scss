@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Light Theme */
+:root {
+  --primary: #6b8e23;
+  --primary-hover: #526a1d;
+  --secondary: #8f9779;
+  --accent: #b7a46a;
+  --background: #f8f9f4;
+  --surface: #ffffff;
+  --text-primary: #27301d;
+  --text-secondary: #66705a;
+  --border: #d8dfc8;
+  --shadow: 0 4px 12px rgba(76, 95, 40, 0.12);
+} /* Dark Theme */
+[data-theme='dark'] {
+  --primary: #a3be5c;
+  --primary-hover: #b1ca69;
+  --secondary: #7f8d63;
+  --accent: #c8b273;
+  --background: #12160d;
+  --surface: #1b2114;
+  --text-primary: #edf3df;
+  --text-secondary: #b8c4a3;
+  --border: #313c24;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+body {
+  font-family: 'JetBrains Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
