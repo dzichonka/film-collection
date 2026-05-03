@@ -5,11 +5,14 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { BreadcrumbService } from '../../../services/breadcrumb.service';
 
 @Component({
-  selector: 'app-details-page',
+  selector: 'section[app-details-page]',
   imports: [],
   templateUrl: './details-page.component.html',
   styleUrl: './details-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'details-page container',
+  },
 })
 export class DetailsPageComponent {
   movieService = inject(MovieService);
@@ -22,12 +25,10 @@ export class DetailsPageComponent {
   movieResource = this.movieService.getMovie(this.movieId());
 
   constructor() {
-    // Эффект сработает, когда данные в ресурсе загрузятся
     effect(() => {
       const movie = this.movieResource.value();
       if (movie) {
-        // Обновляем крошку для текущего URL
-        const currentUrl = this.router.url; // или собрать вручную /details/ID
+        const currentUrl = this.router.url;
         this.breadcrumbService.setLabel(currentUrl, movie.title);
       }
     });

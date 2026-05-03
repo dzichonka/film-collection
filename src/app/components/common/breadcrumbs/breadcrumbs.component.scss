@@ -4,7 +4,6 @@
 }
 .breadcrumb {
   @include mixins.flex($justify: flex-start);
-  padding: 0;
 }
 .breadcrumb-item {
   list-style: none;

@@ -8,12 +8,11 @@
 }
 @mixin btn {
   padding: 2px 5px;
-  background-color: var(--background);
-  color: var(--primary);
+  background-color: transparent;
+  color: var(--primary-hover);
   border-bottom: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  // box-shadow: none;
   &:disabled {
     cursor: default;
     opacity: 0.5;
@@ -25,7 +24,7 @@
 
     &:hover:not(:disabled) {
       border-bottom: 2px solid var(--primary);
-      color: var(--primary-hover);
+      color: var(--primary);
     }
   }
 }
@@ -39,7 +38,13 @@
     transition: all 0.5s ease;
 
     &:hover:not(:disabled) {
-      color: var(--primary-hover);
+      color: var(--accent);
     }
   }
+}
+@mixin container($width: 1100px) {
+  max-width: $width;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include flex($direction: column);
 }

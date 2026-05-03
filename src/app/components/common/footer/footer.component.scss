@@ -1,15 +1,16 @@
 @use '../../../styles/mixins' as mixins;
 :host {
   width: 100%;
+  background-color: var(--background);
 }
-.footer {
-  max-width: 1000px;
-  margin: 0 auto;
+.container {
   @include mixins.flex($justify: space-between);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .row {
   @include mixins.flex();
 }
 .material-icons {
-  color: var(--primary);
+  color: var(--accent);
 }

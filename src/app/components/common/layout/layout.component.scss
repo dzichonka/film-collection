@@ -1,0 +1,10 @@
+@use '../../../styles/_mixins.scss' as *;
+
+:host {
+  @include flex($direction: column, $justify: flex-start, $gap: 30px);
+  min-height: 100vh;
+  margin: 0;
+}
+main {
+  flex-grow: 1;
+}

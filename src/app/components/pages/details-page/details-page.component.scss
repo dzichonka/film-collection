@@ -1,6 +1,9 @@
 @use '../../../styles/mixins' as mixins;
 
 .movie {
-  width: 600px;
   @include mixins.flex($direction: column);
+}
+.img {
+  width: 100%;
+  max-width: 400px;
 }

@@ -1,10 +1,17 @@
 @use '../../../styles/mixins' as mixins;
 :host {
   width: 100%;
+  background-color: var(--background);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.header {
-  max-width: 1000px;
-  margin: 0 auto;
+.title {
+  font-family: 'Oooh Baby', cursive;
+  font-weight: bold;
+  font-size: 40px;
+  color: var(--accent);
+}
+.container {
   @include mixins.flex($justify: space-between);
 }
 .nav {

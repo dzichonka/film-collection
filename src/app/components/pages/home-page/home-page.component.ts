@@ -4,11 +4,14 @@ import { Router } from '@angular/router';
 import { CardComponent } from '../../common/card/card.component';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'section[app-home-page]',
   imports: [CardComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'home-page container',
+  },
 })
 export class HomePageComponent {
   movieService = inject(MovieService);

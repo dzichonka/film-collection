@@ -1,4 +1,4 @@
 @use '../../../styles/mixins' as mixins;
 .movie-list {
-  @include mixins.flex($wrap: wrap);
+  @include mixins.flex($wrap: wrap, $justify: center, $gap: 25px, $align: stretch);
 }

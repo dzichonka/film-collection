@@ -1,4 +1,24 @@
 @use '../../../styles/mixins' as mixins;
+// :host {
+//   @include mixins.flex($direction: column, $gap: 30px);
+//   width: 100%;
+// }
+.card {
+  width: 100%;
+}
 .wrapper {
-  @include mixins.flex($align: flex-start, $justify: flex-start);
+  @include mixins.flex($align: flex-end, $justify: flex-start);
+}
+.links {
+  @include mixins.flex($justify: flex-start);
+}
+h2 {
+  margin: 20px 0;
+  color: var(--accent);
+}
+
+.material-icons {
+  color: var(--accent);
+  transform: translateY(10px) rotate(30deg);
+  padding-right: 15px;
 }

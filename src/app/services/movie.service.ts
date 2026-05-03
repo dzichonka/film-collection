@@ -1,4 +1,4 @@
-import { Injectable, resource, signal } from '@angular/core';
+import { computed, Injectable, resource, signal } from '@angular/core';
 import { Movie } from '../types/movie.type';
 
 @Injectable({
@@ -17,6 +17,8 @@ export class MovieService {
       loader: () => fetch(this.baseUrl).then((res) => res.json() as Promise<Movie[]>),
     });
   }
+
+  readonly movies = computed(() => this.getAllMovies().value());
 
   getMovie(id: number) {
     return resource({
