@@ -1,10 +1,12 @@
 <ul class="movie-list">
-  @if (movies.isLoading()) {
-    <p>Loading...</p>
-  }
-
-  @if (movies.hasValue()) {
-    @for (movie of movies.value(); track movie.id) {
+  @if (movieService.isLoading()) {
+    <app-loader></app-loader>
+  } @else if (movieService.error()) {
+    <p>Failed to load movies.</p>
+  } @else if (movieService.filteredMovies().length === 0) {
+    <p>No movies found.</p>
+  } @else {
+    @for (movie of movieService.filteredMovies(); track movie.id) {
       <li app-card [movie]="movie"></li>
     }
   }

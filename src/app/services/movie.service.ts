@@ -6,33 +6,66 @@ import { Movie } from '../types/movie.type';
 })
 export class MovieService {
   baseUrl = 'assets/films.json';
+  readonly search = signal('');
 
-  private readonly reloadVersion = signal(0);
+  private readonly moviesResource = resource<Movie[], void>({
+    loader: async ({ abortSignal }) => {
+      await new Promise<void>((resolve, reject) => {
+        const timeoutId = setTimeout(resolve, 2000);
 
-  getAllMovies() {
-    return resource({
-      params: () => ({
-        version: this.reloadVersion(),
-      }),
-      loader: () => fetch(this.baseUrl).then((res) => res.json() as Promise<Movie[]>),
-    });
+        abortSignal.addEventListener('abort', () => {
+          clearTimeout(timeoutId);
+          reject(new DOMException('Aborted', 'AbortError'));
+        });
+      });
+
+      const response = await fetch(this.baseUrl, {
+        signal: abortSignal,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to load movies');
+      }
+
+      return response.json() as Promise<Movie[]>;
+    },
+  });
+
+  readonly movies = computed(() => this.moviesResource.value() ?? []);
+
+  getMovie(id: number): Movie | undefined {
+    return this.movies().find((movie) => movie.id === id);
   }
 
-  readonly movies = computed(() => this.getAllMovies().value());
+  readonly favorites = computed(() => this.movies().filter((movie) => movie.isFavorite));
 
-  getMovie(id: number) {
-    return resource({
-      loader: async () => {
-        const movies = await fetch(this.baseUrl).then((res) => res.json() as Promise<Movie[]>);
-        const movie = movies.find((movie) => movie.id === id);
-        if (!movie) {
-          throw new Error(`Movie with id ${id} not found`);
-        }
-        return movie;
-      },
-    });
+  readonly filteredMovies = computed(() => {
+    const query = this.search().trim().toLowerCase();
+
+    if (!query) {
+      return this.movies();
+    }
+
+    return this.movies().filter((movie) => movie.title.toLowerCase().includes(query));
+  });
+
+  readonly isLoading = this.moviesResource.isLoading;
+  readonly error = this.moviesResource.error;
+  readonly status = this.moviesResource.status;
+
+  updateSearch(value: string): void {
+    this.search.set(value);
   }
-  refreshMovies(): void {
-    this.reloadVersion.update((v) => v + 1);
+
+  toggleFavorite(id: number): void {
+    const updated = this.movies().map((movie) =>
+      movie.id === id ? { ...movie, isFavorite: !movie.isFavorite } : movie,
+    );
+
+    this.moviesResource.set(updated);
+  }
+
+  reload(): void {
+    this.moviesResource.reload();
   }
 }

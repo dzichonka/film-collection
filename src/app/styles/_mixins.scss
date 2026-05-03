@@ -30,6 +30,8 @@
 }
 @mixin link {
   color: var(--primary);
+  background-color: transparent;
+  border: none;
   &:visited {
     color: var(--secondary);
   }

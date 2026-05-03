@@ -1,9 +1,29 @@
 @use '../../../styles/mixins' as mixins;
 
 .movie {
-  @include mixins.flex($direction: column);
+  @include mixins.flex($align: flex-start);
 }
 .img {
   width: 100%;
   max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 0 var(--shadow);
+}
+.content {
+  padding: 10px;
+  @include mixins.flex($direction: column, $align: flex-end, $gap: 30px);
+}
+.title {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 24px;
+}
+.description {
+  text-align: right;
+}
+.back {
+  align-self: end;
+}
+p {
+  @include mixins.flex($align: center);
 }

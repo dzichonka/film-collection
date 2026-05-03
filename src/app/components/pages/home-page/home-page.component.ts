@@ -2,10 +2,11 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MovieService } from '../../../services/movie.service';
 import { Router } from '@angular/router';
 import { CardComponent } from '../../common/card/card.component';
+import { LoaderComponent } from '../../common/loader/loader.component';
 
 @Component({
   selector: 'section[app-home-page]',
-  imports: [CardComponent],
+  imports: [CardComponent, LoaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -16,10 +17,4 @@ import { CardComponent } from '../../common/card/card.component';
 export class HomePageComponent {
   movieService = inject(MovieService);
   router = inject(Router);
-
-  movies = this.movieService.getAllMovies();
-
-  onMovieSelected(movieId: number): void {
-    this.router.navigate(['/details', movieId]);
-  }
 }

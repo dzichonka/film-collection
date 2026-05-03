@@ -1,17 +1,20 @@
-@if (movieResource.isLoading()) {
-  <p>Loading...</p>
-}
-
-@if (movieResource.hasValue()) {
+<button app-back-btn class="back"></button>
+@if (movieService.isLoading()) {
+  <app-loader></app-loader>
+} @else if (movieService.error()) {
+  <p>Failed to load movie.</p>
+} @else if (movie(); as movie) {
   <div class="movie">
-    <h3>{{ movieResource.value().title }}</h3>
-    <p>{{ movieResource.value().description }}</p>
-    <p>Year: {{ movieResource.value().year }}</p>
-    <p>Genre: {{ movieResource.value().genre }}</p>
-    <img
-      class="img"
-      src="{{ movieResource.value().posterUrl }}"
-      alt="{{ movieResource.value().title }} poster"
-    />
+    <img class="img" [src]="movie.posterUrl" [alt]="movie.title + ' poster'" />
+    <div class="content">
+      <h3 class="title">{{ movie.title }}</h3>
+      <p>{{ movie.duration | duration }}</p>
+      <p class="description">{{ movie.description }}</p>
+      <p>{{ movie.year }} year</p>
+      <p>genre: {{ movie.genre }}</p>
+      <p><i class="material-icons">star</i>{{ movie.rating }}</p>
+    </div>
   </div>
+} @else {
+  <p>Movie not found.</p>
 }
