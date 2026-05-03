@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BreadcrumbService } from '../../../services/breadcrumb.service';
 
@@ -7,6 +7,7 @@ import { BreadcrumbService } from '../../../services/breadcrumb.service';
   imports: [RouterLink],
   templateUrl: './breadcrumbs.component.html',
   styleUrl: './breadcrumbs.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbsComponent {
   private breadcrumbService = inject(BreadcrumbService);

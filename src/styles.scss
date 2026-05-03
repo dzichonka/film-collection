@@ -64,6 +64,9 @@ li {
 .btn {
   @include mixins.btn();
 }
+.icon-link {
+  @include mixins.icon-link();
+}
 .container {
   @include mixins.container();
 }

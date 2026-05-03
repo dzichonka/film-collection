@@ -50,3 +50,31 @@
   padding: 0 20px;
   @include flex($direction: column);
 }
+@mixin icon-link {
+  color: var(--primary);
+  background-color: var(--shadow);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  border: none;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (hover: hover) {
+    transition: all 0.5s ease;
+    &:hover:not(:disabled) {
+      color: var(--primary-hover);
+    }
+  }
+  &.active {
+    color: var(--accent);
+  }
+}

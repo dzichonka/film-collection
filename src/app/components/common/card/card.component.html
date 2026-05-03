@@ -1,3 +1,10 @@
+<button
+  class="icon-link"
+  [ngClass]="{ active: movie().isFavorite }"
+  (click)="onFavoriteToggle($event)"
+>
+  <i class="material-icons">favorites</i>
+</button>
 <img class="img" [src]="movie().posterUrl" [alt]="movie().title + ' poster'" />
 <div class="content">
   <h2 class="title">

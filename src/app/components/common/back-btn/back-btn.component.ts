@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
   imports: [],
   templateUrl: './back-btn.component.html',
   styleUrl: './back-btn.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'link', '(click)': 'goBack()' },
 })
 export class BackBtnComponent {
