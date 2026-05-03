@@ -1,13 +1,10 @@
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, resource, signal } from '@angular/core';
+import { Injectable, resource, signal } from '@angular/core';
 import { Movie } from '../types/movie.type';
-import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieService {
-  http = inject(HttpClient);
   baseUrl = 'assets/films.json';
 
   private readonly reloadVersion = signal(0);
@@ -17,14 +14,14 @@ export class MovieService {
       params: () => ({
         version: this.reloadVersion(),
       }),
-      loader: () => firstValueFrom(this.http.get<Movie[]>(this.baseUrl)),
+      loader: () => fetch(this.baseUrl).then((res) => res.json() as Promise<Movie[]>),
     });
   }
 
   getMovie(id: number) {
     return resource({
       loader: async () => {
-        const movies = await firstValueFrom(this.http.get<Movie[]>(this.baseUrl));
+        const movies = await fetch(this.baseUrl).then((res) => res.json() as Promise<Movie[]>);
         const movie = movies.find((movie) => movie.id === id);
         if (!movie) {
           throw new Error(`Movie with id ${id} not found`);

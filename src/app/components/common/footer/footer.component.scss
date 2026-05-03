@@ -1,7 +1,13 @@
 @use '../../../styles/mixins' as mixins;
+:host {
+  width: 100%;
+}
 .footer {
   max-width: 1000px;
   margin: 0 auto;
+  @include mixins.flex($justify: space-between);
+}
+.row {
   @include mixins.flex();
 }
 .material-icons {

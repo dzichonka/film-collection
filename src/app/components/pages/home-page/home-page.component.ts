@@ -1,10 +1,11 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MovieService } from '../../../services/movie.service';
 import { Router } from '@angular/router';
+import { CardComponent } from '../../common/card/card.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -17,7 +17,7 @@ This project was created as part of my Angular learning journey and focuses on c
 
 ## 🚀 Live Demo
 
-[Vercel Deployment](https://angular-film-collection.vercel.app/home)
+[Vercel Deployment](https://angular-film-collection.vercel.app)
 
 ## 📚 Assignment
 

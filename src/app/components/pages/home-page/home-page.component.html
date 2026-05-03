@@ -5,10 +5,7 @@
 
   @if (movies.hasValue()) {
     @for (movie of movies.value(); track movie.id) {
-      <li class="movie-item" (click)="onMovieSelected(movie.id)">
-        <h3>{{ movie.title }}</h3>
-        <img class="img" src="{{ movie.posterUrl }}" alt="{{ movie.title }} poster" />
-      </li>
+      <li app-card [movie]="movie"></li>
     }
   }
 </ul>

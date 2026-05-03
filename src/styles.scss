@@ -17,7 +17,7 @@
   --primary-hover: #b1ca69;
   --secondary: #7f8d63;
   --accent: #c8b273;
-  --background: #12160d;
+  --background: #0d160d;
   --surface: #1b2114;
   --text-primary: #edf3df;
   --text-secondary: #b8c4a3;
@@ -25,6 +25,7 @@
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 body {
+  box-sizing: border-box;
   font-family: 'JetBrains Mono', monospace;
   font-optical-sizing: auto;
   font-weight: 400;
