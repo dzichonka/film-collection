@@ -1,13 +1,17 @@
-@if (movie.isLoading()) {
+@if (movieResource.isLoading()) {
   <p>Loading...</p>
 }
 
-@if (movie.hasValue()) {
+@if (movieResource.hasValue()) {
   <div class="movie">
-    <h3>{{ movie.value().title }}</h3>
-    <p>{{ movie.value().description }}</p>
-    <p>Year: {{ movie.value().year }}</p>
-    <p>Genre: {{ movie.value().genre }}</p>
-    <img class="img" src="{{ movie.value().posterUrl }}" alt="{{ movie.value().title }} poster" />
+    <h3>{{ movieResource.value().title }}</h3>
+    <p>{{ movieResource.value().description }}</p>
+    <p>Year: {{ movieResource.value().year }}</p>
+    <p>Genre: {{ movieResource.value().genre }}</p>
+    <img
+      class="img"
+      src="{{ movieResource.value().posterUrl }}"
+      alt="{{ movieResource.value().title }} poster"
+    />
   </div>
 }

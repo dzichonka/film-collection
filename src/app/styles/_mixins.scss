@@ -7,12 +7,10 @@
   gap: $gap;
 }
 @mixin btn {
-  
   padding: 2px 5px;
-  // border-radius: 5px;
   background-color: var(--background);
   color: var(--primary);
-  border-bottom: none;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
   // box-shadow: none;
@@ -28,14 +26,11 @@
     &:hover:not(:disabled) {
       border-bottom: 2px solid var(--primary);
       color: var(--primary-hover);
-      //transform: scale(1.1);
-      // box-shadow: var(--shadow);
     }
   }
 }
 @mixin link {
   color: var(--primary);
-  padding: 5px 10px;
   &:visited {
     color: var(--secondary);
   }

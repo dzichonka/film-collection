@@ -1,0 +1,11 @@
+@use '../../../styles/mixins' as mixins;
+:host {
+  width: 100%;
+}
+.breadcrumb {
+  @include mixins.flex($justify: flex-start);
+  padding: 0;
+}
+.breadcrumb-item {
+  list-style: none;
+}
