@@ -1,3 +1,8 @@
+<app-search
+  class="search"
+  [value]="movieService.search()"
+  (valueChange)="movieService.updateSearch($event)"
+/>
 <ul class="movie-list">
   @if (movieService.isLoading()) {
     <app-loader></app-loader>

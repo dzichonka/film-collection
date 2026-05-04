@@ -1,0 +1,7 @@
+<input
+  class="custom-input"
+  type="text"
+  [value]="value()"
+  (input)="valueChange.emit($event.target.value)"
+  placeholder="Search movies..."
+/>

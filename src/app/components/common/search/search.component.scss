@@ -1,0 +1,35 @@
+.custom-input {
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  color: var(--primary);
+  background: var(--background);
+  border: 1px solid var(--primary-hover);
+  border-radius: 10px 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.custom-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.custom-input:hover {
+  border-color: var(--secondary);
+}
+
+.custom-input:focus {
+  border-color: var(--primary);
+}
+
+.custom-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.custom-input:-webkit-autofill,
+.custom-input:-webkit-autofill:hover,
+.custom-input:-webkit-autofill:focus {
+  transition: all 5000s ease-in-out 0s;
+}

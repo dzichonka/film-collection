@@ -1,4 +1,10 @@
 @use '../../../styles/mixins' as mixins;
+:host {
+  @include mixins.flex($direction: column, $gap: 30px);
+}
 .movie-list {
   @include mixins.flex($wrap: wrap, $justify: center, $gap: 25px, $align: stretch);
+}
+.search {
+  align-self: end;
 }
