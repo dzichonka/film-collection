@@ -1,7 +1,10 @@
 <input
+  id="search"
   class="custom-input"
   type="text"
   [value]="value()"
   (input)="valueChange.emit($event.target.value)"
   placeholder="Search movies..."
+  appAutofocus
 />
+<label class="search" for="search"><i class="material-icons">search</i></label>

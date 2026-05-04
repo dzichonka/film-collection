@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, output, input } from '@angular/core';
+import { AutofocusDirective } from '../../../directives/autofocus.directive';
 
 @Component({
   selector: 'app-search',
-  imports: [],
+  imports: [AutofocusDirective],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
