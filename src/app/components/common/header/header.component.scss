@@ -17,3 +17,6 @@
 .nav {
   @include mixins.flex($justify: flex-end);
 }
+.active {
+  color: var(--accent);
+}

@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
-import { filter, map, startWith } from 'rxjs';
+import { filter, map, startWith, tap } from 'rxjs';
 import { Breadcrumb } from '../types/breadcrumb.type';
 
 @Injectable({
@@ -16,6 +16,7 @@ export class BreadcrumbService {
       filter((event) => event instanceof NavigationEnd),
       startWith(null),
       map(() => this.router.routerState.snapshot.root),
+      tap((data) => console.log(data.data)),
     ),
   );
 
